@@ -1,29 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+   <HelloWorld></HelloWorld>
     <router-view/>
   </div>
 </template>
+<script>
+    import HelloWorld from './components/HelloWorld'
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    export default {
+        name: 'App',
+        components: {
+            HelloWorld
+        }
+
     }
+</script>
+<style lang="scss">
+  body {
+    //background: rgb(131,58,180);
+    //background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+    color: #2c0938;
+    font-family: 'Signika', sans-serif;
   }
-}
+
+  #app {
+    width: 270px;
+    background: white;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 4px;
+    opacity: 0.95;
+  }
+
 </style>
