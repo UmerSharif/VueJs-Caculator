@@ -39,9 +39,11 @@
 
     .calculator {
         display: grid;
-        font-size: 40px;
+        font-size: 30px;
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(50px, auto);
+        border: 1px solid lightgrey;
+        border-radius: 3px;
     }
 
     .display {
@@ -49,7 +51,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        border: 1px solid black;
+        background-color: darkgray;
     }
 
     .AC {
@@ -65,7 +67,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid black;
+        border: 1px solid lightgrey;
     }
 
 </style>
