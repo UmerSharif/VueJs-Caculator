@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-   <HelloWorld></HelloWorld>
+   <Calculator />
     <router-view/>
   </div>
 </template>
 <script>
-    import HelloWorld from './components/HelloWorld'
+    import Calculator from './components/Calculator'
 
     export default {
         name: 'App',
         components: {
-            HelloWorld
+            Calculator
         }
 
     }
@@ -23,7 +23,6 @@
     justify-content: center;
     align-items: center;
     line-height: 1.4;
-    color: #2c0938;
     font-family: 'Signika', sans-serif;
   }
 
