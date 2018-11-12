@@ -37,16 +37,22 @@
         },
 
         methods: {
+
+            // clear the inputs method
             Clear() {
                 this.current = ''
             },
 
             Sign(){
+
+                // add or remove - sign to the integer
                 if(this.current.charAt(0) === '-'){
                     this.current = this.current.slice(1)
                 } else {
                     this.current = `-${this.current}`
                 }
+                // the above condition can also be written as
+                // this.current = this.current.charAt(0) === '-' ? this.current.slice(1) : `-${this.current}`
             }
         }
 
@@ -59,7 +65,7 @@
 
     .calculator {
         display: grid;
-        font-size: 30px;
+        font-size: 25px;
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(50px, auto);
         border: 1px solid lightgrey;
