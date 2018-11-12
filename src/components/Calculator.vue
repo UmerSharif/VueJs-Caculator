@@ -1,24 +1,25 @@
 <template>
     <div class="calculator">
-        <div class="display">123</div>
-            <div class="btn AC">AC</div>
+        <div class="display">{{current || 0}}</div>
+            <div @click= "Clear" class="btn AC">AC</div>
+            <div @click="Sign" class="btn">+/-</div>
             <div class="btn">%</div>
-            <div class="btn">/</div>
+            <div class="btn operator ">/</div>
             <div class="btn">7</div>
             <div class="btn">8</div>
             <div class="btn">9</div>
-            <div class="btn">x</div>
+            <div class="btn operator">x</div>
             <div class="btn">4</div>
             <div class="btn">5</div>
             <div class="btn">6</div>
-            <div class="btn">-</div>
+            <div class="btn operator">-</div>
             <div class="btn">1</div>
             <div class="btn">2</div>
             <div class="btn">3</div>
-            <div class="btn">+</div>
+            <div class="btn operator">+</div>
             <div class="btn zero">0</div>
             <div class="btn">.</div>
-            <div class="btn">=</div>
+            <div class="btn operator">=</div>
 
     </div>
 </template>
@@ -29,6 +30,25 @@
 
     export default {
         name: 'Calculator',
+        data(){
+            return {
+                current : ''
+            }
+        },
+
+        methods: {
+            Clear() {
+                this.current = ''
+            },
+
+            Sign(){
+                if(this.current.charAt(0) === '-'){
+                    this.current = this.current.slice(1)
+                } else {
+                    this.current = `-${this.current}`
+                }
+            }
+        }
 
 
     }
@@ -52,12 +72,11 @@
         justify-content: flex-end;
         align-items: center;
         background-color: darkgray;
+        padding: 20px 5px 0 0;
+        height: 52px;
     }
 
-    .AC {
-        grid-column: 1/3;
 
-    }
 
     .zero {
         grid-column: 1/3;
@@ -68,6 +87,12 @@
         justify-content: center;
         align-items: center;
         border: 1px solid lightgrey;
+        cursor: pointer;
+    }
+
+    .operator {
+        background-color: #f89733;
+        color: azure;
     }
 
 </style>
