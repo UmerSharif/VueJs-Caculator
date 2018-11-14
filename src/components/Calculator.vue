@@ -3,21 +3,21 @@
         <div class="display">{{current || 0}}</div>
             <div @click= "Clear" class="btn AC">AC</div>
             <div @click="Sign" class="btn">+/-</div>
-            <div class="btn">%</div>
+            <div @click="Percentage" class="btn">%</div>
             <div class="btn operator ">/</div>
-            <div @click="addDigit(event)" class="btn">7</div>
-            <div class="btn">8</div>
-            <div class="btn">9</div>
+            <div @click="addDigit('7')" class="btn">7</div>
+            <div @click="addDigit('8')" class="btn">8</div>
+            <div @click="addDigit('9')" class="btn">9</div>
             <div class="btn operator">x</div>
-            <div class="btn">4</div>
-            <div class="btn">5</div>
-            <div class="btn">6</div>
+            <div @click="addDigit('4')" class="btn">4</div>
+            <div @click="addDigit('5')" class="btn">5</div>
+            <div @click="addDigit('6')" class="btn">6</div>
             <div class="btn operator">-</div>
-            <div class="btn">1</div>
-            <div class="btn">2</div>
-            <div class="btn">3</div>
+            <div @click="addDigit('1')" class="btn">1</div>
+            <div @click="addDigit('2')" class="btn">2</div>
+            <div @click="addDigit('3')" class="btn">3</div>
             <div class="btn operator">+</div>
-            <div class="btn zero">0</div>
+            <div @click="addDigit('0')" class="btn zero">0</div>
             <div class="btn">.</div>
             <div class="btn operator">=</div>
 
@@ -53,8 +53,12 @@
                 // the above condition can also be written as
                 // this.current = this.current.charAt(0) === '-' ? this.current.slice(1) : `-${this.current}`
             },
-            addDigit(event) {
-                this.current += event.target.innerHTML
+            Percentage(){
+                this.current = `${parseFloat(this.current) / 100}`
+            },
+
+            addDigit(number) {
+              this.current += number
             }
         }
 
