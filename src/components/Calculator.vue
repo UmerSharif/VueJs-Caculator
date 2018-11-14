@@ -5,7 +5,7 @@
             <div @click="Sign" class="btn">+/-</div>
             <div class="btn">%</div>
             <div class="btn operator ">/</div>
-            <div class="btn">7</div>
+            <div @click="addDigit(event)" class="btn">7</div>
             <div class="btn">8</div>
             <div class="btn">9</div>
             <div class="btn operator">x</div>
@@ -43,9 +43,8 @@
                 this.current = ''
             },
 
+            // add or remove - sign to the integer
             Sign(){
-
-                // add or remove - sign to the integer
                 if(this.current.charAt(0) === '-'){
                     this.current = this.current.slice(1)
                 } else {
@@ -53,6 +52,9 @@
                 }
                 // the above condition can also be written as
                 // this.current = this.current.charAt(0) === '-' ? this.current.slice(1) : `-${this.current}`
+            },
+            addDigit(event) {
+                this.current += event.target.innerHTML
             }
         }
 
