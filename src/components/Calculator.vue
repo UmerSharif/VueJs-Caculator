@@ -4,19 +4,19 @@
             <div @click= "Clear" class="btn AC">AC</div>
             <div @click="Sign" class="btn">+/-</div>
             <div @click="Percentage" class="btn">%</div>
-            <div class="btn operator ">/</div>
+            <div @click="divide" class="btn operator ">/</div>
             <div @click="addDigit('7')" class="btn">7</div>
             <div @click="addDigit('8')" class="btn">8</div>
             <div @click="addDigit('9')" class="btn">9</div>
-            <div class="btn operator">x</div>
+            <div @click="multiply" class="btn operator">x</div>
             <div @click="addDigit('4')" class="btn">4</div>
             <div @click="addDigit('5')" class="btn">5</div>
             <div @click="addDigit('6')" class="btn">6</div>
-            <div class="btn operator">-</div>
+            <div @click="sub" class="btn operator">-</div>
             <div @click="addDigit('1')" class="btn">1</div>
             <div @click="addDigit('2')" class="btn">2</div>
             <div @click="addDigit('3')" class="btn">3</div>
-            <div class="btn operator">+</div>
+            <div @click="add" class="btn operator">+</div>
             <div @click="addDigit('0')" class="btn zero">0</div>
             <div class="btn">.</div>
             <div class="btn operator">=</div>
@@ -59,6 +59,14 @@
 
             addDigit(number) {
               this.current += number
+            },
+
+            divide(){
+
+            },
+
+            multiply(){
+
             }
         }
 
