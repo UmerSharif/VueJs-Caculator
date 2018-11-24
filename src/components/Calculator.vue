@@ -65,23 +65,29 @@
 
             },
 
-            divide(){
+            setStateValues(){
+                this.previous = this.current
+                this.current = ''
+                this.operatorClicked = !this.operatorClicked
+            },
 
+            divide(){
+                this.operator = (a,b) => a / b
             },
 
             multiply(){
-
+                this.operator = (a,b) => a * b
             },
 
             sub() {
+                this.operator = (a,b) => a - b
 
             },
 
             add(){
                 this.operator = (a,b) => a + b
-                this.previous = this.current
-                this.current = ''
-                this.operatorClicked = !this.operatorClicked
+                this.setStateValues()
+
             },
 
             equal(){
