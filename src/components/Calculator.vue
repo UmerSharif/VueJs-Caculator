@@ -62,6 +62,7 @@
 
             addDigit(number) {
               this.current += number
+
             },
 
             divide(){
@@ -79,11 +80,15 @@
             add(){
                 this.operator = (a,b) => a + b
                 this.previous = this.current
+                this.current = ''
                 this.operatorClicked = !this.operatorClicked
             },
 
             equal(){
-
+                   this.current = this.operator(
+                       parseFloat(this.current),
+                       parseFloat(this.previous)
+                   )
             }
         }
 
