@@ -61,27 +61,32 @@
             },
 
             addDigit(number) {
+                if(this.operatorClicked){
+                    this.current = ''
+                    this.operatorClicked = false
+                }
               this.current += number
 
             },
 
             setStateValues(){
                 this.previous = this.current
-                this.current = ''
-                this.operatorClicked = !this.operatorClicked
+                this.operatorClicked = true
             },
 
             divide(){
                 this.operator = (a,b) => a / b
+                this.setStateValues()
             },
 
             multiply(){
                 this.operator = (a,b) => a * b
+                this.setStateValues()
             },
 
             sub() {
                 this.operator = (a,b) => a - b
-
+                this.setStateValues()
             },
 
             add(){
@@ -95,6 +100,7 @@
                        parseFloat(this.current),
                        parseFloat(this.previous)
                    )
+                this.previous = null
             }
         }
 
