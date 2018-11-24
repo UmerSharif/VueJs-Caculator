@@ -19,7 +19,7 @@
             <div @click="add" class="btn operator">+</div>
             <div @click="addDigit('0')" class="btn zero">0</div>
             <div class="btn">.</div>
-            <div class="btn operator">=</div>
+            <div @click="equal" class="btn operator">=</div>
 
     </div>
 </template>
@@ -32,7 +32,8 @@
         name: 'Calculator',
         data(){
             return {
-                current : ''
+                current : '',
+                operator:''
             }
         },
 
@@ -74,6 +75,10 @@
             },
 
             add(){
+                this.operator = (a,b) => a + b
+            },
+
+            equal(){
 
             }
         }
