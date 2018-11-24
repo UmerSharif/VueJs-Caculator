@@ -33,7 +33,9 @@
         data(){
             return {
                 current : '',
-                operator:''
+                previous: null,
+                operator: null,
+                operatorClicked: false
             }
         },
 
@@ -76,6 +78,8 @@
 
             add(){
                 this.operator = (a,b) => a + b
+                this.previous = this.current
+                this.operatorClicked = !this.operatorClicked
             },
 
             equal(){
