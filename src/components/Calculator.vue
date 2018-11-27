@@ -18,7 +18,7 @@
             <div @click="addDigit('3')" class="btn">3</div>
             <div @click="add" class="btn operator">+</div>
             <div @click="addDigit('0')" class="btn zero">0</div>
-            <div class="btn">.</div>
+            <div @click="Dot" class="btn">.</div>
             <div @click="equal" class="btn operator">=</div>
 
     </div>
@@ -66,6 +66,10 @@
                     this.operatorClicked = false
                 }
               this.current += number
+
+            },
+
+            Dot(){
 
             },
 
