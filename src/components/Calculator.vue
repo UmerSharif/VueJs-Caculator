@@ -70,7 +70,9 @@
             },
 
             Dot(){
-
+                if(this.current.indexOf('.') === -1) {
+                    this.addDigit('.')
+                }
             },
 
             setStateValues(){
