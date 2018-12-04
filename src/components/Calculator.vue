@@ -68,7 +68,8 @@
               this.current += number
 
             },
-
+				// to check if dot is present, if not then add one.
+				// it has to be optimised to add dot after an operator is pressed
             Dot(){
                 if(this.current.indexOf('.') === -1) {
                     this.addDigit('.')
